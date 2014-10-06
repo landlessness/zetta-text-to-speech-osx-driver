@@ -1,0 +1,31 @@
+{
+  "name": "zetta-speech-osx-driver",
+  "version": "0.1.0",
+  "description": "Speech synthesis manager for OS X",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Mulloy <brian@landlessness.net>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/landlessness/zetta-speech-osx-driver.git"
+  },
+  "dependencies": {
+    "zetta-device": "^0.3.0"
+  },
+  "bugs": {
+    "url": "https://github.com/landlessness/zetta-speech-osx-driver/issues"
+  },
+  "homepage": "https://github.com/landlessness/zetta-speech-osx-driver",
+  "directories": {
+    "example": "example"
+  },
+  "keywords": [
+    "zetta",
+    "osx",
+    "speech",
+    "say"
+  ]
+}

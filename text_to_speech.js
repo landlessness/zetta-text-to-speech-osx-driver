@@ -1,22 +1,24 @@
-var Device = require('zetta-device');
 var util = require('util');
+var Device = require('zetta-device');
 var exec = require('child_process').exec;
 
-var Speech = module.exports = function() {
+var Speech = module.exports = function(availableVoices) {
   Device.call(this);
+  this._availableVoices = availableVoices;
 };
 util.inherits(Speech, Device);
 
 Speech.prototype.init = function(config) {
   config
     .state('silent')
-    .type('speech')
-    .name('Speech')
+    .type('text-to-speech')
+    .name('Text to Speech')
     .when('silent', { allow: ['say']})
     .when('speaking', { allow: [] })
     .map('say', this.say, [
       { name: 'words', type: 'text'},
-      { name: 'voice', type: 'text'}
+      { name: 'voice', type: 'radio', value: this._availableVoices},
+      { name: 'rate', type: 'range', min: 90, max: 720, step: 1}
     ]);
 };
 
@@ -25,7 +27,6 @@ Speech.prototype.say = function(words, voice, cb) {
   var self = this;
 
   var sayCommand = 'say ';
-  console.log(typeof voice);
   if (voice) {
     sayCommand += '-v ' + voice + ' ';
   }
@@ -38,7 +39,7 @@ Speech.prototype.say = function(words, voice, cb) {
       console.log('exec error: ' + error);
       cb(error);
     } else {
-      cb();      
+      cb();
     }
   });
 };

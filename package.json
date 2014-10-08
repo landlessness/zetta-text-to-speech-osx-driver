@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "zetta-device": "^0.6.0",
-    "zetta-auto-scout": "^0.5.0"
+    "zetta-scout": "^0.3.0"
   },
   "bugs": {
     "url": "https://github.com/landlessness/zetta-text-to-speech-osx-driver/issues"

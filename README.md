@@ -1,19 +1,19 @@
-##Speech Synthesis Manager for OS X
+##Zetta driver for 'say', the speech synthesis manager for OS X
 
 ###Install
 
 ```
-$> npm install zetta-speech-osx-driver
+$> npm install zetta-text-to-speech-osx-driver
 ```
 
 ###Usage
 
 ```
 var zetta = require('zetta');
-var Speech = require('zetta-speech-osx-driver');
+var TextToSpeech = require('zetta-text-to-speech-osx-driver');
 
 zetta()
-  .use(Speech)
+  .use(TextToSpeech)
   .listen(1337)
 ```
 

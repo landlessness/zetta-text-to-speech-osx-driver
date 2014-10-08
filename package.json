@@ -1,7 +1,7 @@
 {
-  "name": "zetta-speech-osx-driver",
+  "name": "zetta-text-to-speech-osx-driver",
   "version": "0.1.0",
-  "description": "Speech synthesis manager for OS X",
+  "description": "Zetta device driver for the Speech synthesis manager of OS X",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,16 +10,16 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/landlessness/zetta-speech-osx-driver.git"
+    "url": "https://github.com/landlessness/zetta-text-to-speech-osx-driver.git"
   },
   "dependencies": {
     "zetta-device": "^0.6.0",
     "zetta-auto-scout": "^0.5.0"
   },
   "bugs": {
-    "url": "https://github.com/landlessness/zetta-speech-osx-driver/issues"
+    "url": "https://github.com/landlessness/zetta-text-to-speech-osx-driver/issues"
   },
-  "homepage": "https://github.com/landlessness/zetta-speech-osx-driver",
+  "homepage": "https://github.com/landlessness/zetta-text-to-speech-osx-driver",
   "directories": {
     "example": "example"
   },
@@ -27,6 +27,9 @@
     "zetta",
     "osx",
     "speech",
+    "text",
+    "text to speech",
+    "synthesis",
     "say"
   ]
 }

@@ -23,6 +23,7 @@ TextToSpeechScout.prototype.init = function(next) {
   });
 };
 
+// TODO: actually parse the results from the say command
 TextToSpeechScout.prototype.parseAvailableVoicesStream = function(voiceStream) {
 
   var voices = [

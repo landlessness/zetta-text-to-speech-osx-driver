@@ -7,8 +7,8 @@ module.exports = function repeatAfterYou(server) {
       'say',
       'Welcome! I will repeat after you.',
       speechToText._availableVoices.first,
-      250,
-      47
+      speechToText._availableDevices.first,
+      250
     );
   });
   

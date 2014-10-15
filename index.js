@@ -11,12 +11,14 @@ util.inherits(TextToSpeechScout, Scout);
 
 TextToSpeechScout.prototype.init = function(next) {
   var self = this;
-  var discoverVoices = "say -v '?'";
+  var discoverAvailableOptions = "say -v ? -a ?";
 
   // TODO: make into a help function
-  exec(discoverVoices, function (error, stdout, stderr) {
+  exec(discoverAvailableOptions, function (error, stdout, stderr) {
     if (error === null) {
-      self.discover(TextToSpeech, self.parseAvailableVoicesStream(stdout), self.parseAvailableDevicesStream(stdout));
+      self.discover(TextToSpeech, 
+        self.parseAvailableVoicesStream(stdout), 
+        self.parseAvailableDevicesStream(stdout));
       next();
     } else {
       console.log('exec error: ' + error);
@@ -50,8 +52,8 @@ TextToSpeechScout.prototype.parseAvailableVoicesStream = function(voicesStream) 
 TextToSpeechScout.prototype.parseAvailableDevicesStream = function(devicesStream) {
 
   var devices = [
-    {name: 'AirPlay', id: 39},
-    {name: 'Built-in Output', id: 47}
+    {name: 'Built-in Output', id: 47},
+    {name: 'AirPlay', id: 39}
   ];
 
   return devices;

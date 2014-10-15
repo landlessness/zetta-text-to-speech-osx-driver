@@ -19,9 +19,9 @@ TextToSpeech.prototype.init = function(config) {
   .map('say', this.say, [
     { name: 'words', title: 'Words to Speak', type: 'text'},
     { name: 'voice', title: 'Voice Persona', type: 'radio',
-      value: this._availableVoices},
+      value: this._availableVoices[0]},
     { name: 'device', title: 'Audio Output Device', type: 'radio',
-      value: this._availableDevices},
+      value: this._availableDevices[0]},
     { name: 'rate', title: 'Rate of Speech', type: 'range',
       min: 90, max: 720, step: 1, units: 'words per minute'}
   ]);
@@ -60,5 +60,5 @@ TextToSpeech.prototype.say = function(words, voice, device, rate, cb) {
 // TODO this feels like it should be a Zetta platform thing
 // Zetta knows from above config that I want an Object not a string
 TextToSpeech.prototype._marshal = function(param) {
-  return (typeof param === 'string') ? JSON.parse(param) : ((param instanceof Array) ? param.first : param);
+  return (typeof param === 'string') ? JSON.parse(param) : ((param instanceof Array) ? param[0] : param);
 }

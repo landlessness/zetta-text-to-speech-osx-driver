@@ -2,10 +2,10 @@ var util = require('util');
 var Device = require('zetta-device');
 var exec = require('child_process').exec;
 
-var TextToSpeech = module.exports = function(availableVoices, availableDevices) {
+var TextToSpeech = module.exports = function(availableOptions) {
   Device.call(this);
-  this._availableVoices = availableVoices;
-  this._availableDevices = availableDevices;
+  this._availableVoices = availableOptions['voices'];
+  this._availableDevices = availableOptions['devices'];
 };
 util.inherits(TextToSpeech, Device);
 

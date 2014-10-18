@@ -1,5 +1,7 @@
-node_modules
+node_modules/
 examples/.registry/*
 examples/.registry/medea.lock
 examples/.peers/*
 examples/.peers/medea.lock
+npm-debug.log
+.DS_Store

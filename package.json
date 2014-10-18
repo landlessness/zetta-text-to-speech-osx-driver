@@ -13,9 +13,9 @@
     "url": "https://github.com/landlessness/zetta-text-to-speech-osx-driver.git"
   },
   "dependencies": {
-    "zetta-device": "^0.6.0",
-    "zetta-scout": "^0.3.0",
-    "async": "~0.9.0"
+    "zetta-device": "~0.7.0",
+    "zetta-scout": "*",
+    "async": "*"
   },
   "bugs": {
     "url": "https://github.com/landlessness/zetta-text-to-speech-osx-driver/issues"

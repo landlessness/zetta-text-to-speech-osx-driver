@@ -19,9 +19,9 @@ TextToSpeech.prototype.init = function(config) {
   .map('say', this.say, [
     { name: 'words', title: 'Words to Speak', type: 'text'},
     { name: 'voice', title: 'Voice Persona', type: 'radio',
-      value: this._availableVoices[0]},
+      value: this._availableVoices},
     { name: 'device', title: 'Audio Output Device', type: 'radio',
-      value: this._availableDevices[0]},
+      value: this._availableDevices},
     { name: 'rate', title: 'Rate of Speech', type: 'range',
       min: 90, max: 720, step: 1, units: 'words per minute'}
   ]);

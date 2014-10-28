@@ -54,10 +54,12 @@ TextToSpeechScout.prototype.parseAvailableOptions = function(stream, regExp, key
   for (var i = 0; i < lines.length; i++) {
     match = lines[i].match(regExp);
     if (match !== null) {
-      var option = {
-        value: match[1].trim(),
-        text: match[1].trim() + ' - ' + match[2].trim(),
-      };
+      var option = {};
+      for (var j=0; j < keys.length; j++) {
+        option[keys[j]] = match[j+1].trim();
+      }
+      option['value'] = match[1].trim();
+      option['text'] = match[1].trim() + ' | ' + match[2].trim();
       options.push(option);
     }
   }

@@ -33,12 +33,10 @@ TextToSpeech.prototype.say = function(words, voice, device, rate, cb) {
 
   var sayCommand = 'say ';
   if (device) {
-    device = this._marshal(device);
-    sayCommand += '-a ' + device.id + ' ';
+    sayCommand += '-a ' + device + ' ';
   }
   if (voice) {
-    voice = this._marshal(voice);
-    sayCommand += '-v ' + voice.name + ' ';
+    sayCommand += '-v ' + voice + ' ';
   }
   if (rate) {
     sayCommand += '-r ' + rate + ' ';
